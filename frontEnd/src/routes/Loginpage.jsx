@@ -5,6 +5,7 @@ import axios from 'axios';
 function Loginpage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const navigateTo = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -18,11 +19,9 @@ function Loginpage() {
 
       if (response.status === 200) {
         navigateTo('/view')
-      } else {
-        navigateTo('/')
       }
     } catch (error) {
-      console.error(error);
+      setError('Usuário ou senha incorretos!')
     }
   };
 
@@ -47,7 +46,8 @@ function Loginpage() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div><br></br>
-        <button type="submit">Login</button>
+        <button type="submit">Login</button><br></br>
+        <p style={{color: 'red'}}>{error}</p>
       </form>
     </div>
   );
