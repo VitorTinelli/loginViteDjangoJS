@@ -31,22 +31,22 @@ function Loginpage() {
       <h2>Login</h2>
       <form onSubmit={handleSubmit} method='POST'>
         <div>
-          <label>Username:</label><br></br>
+          <label>Usuário:</label><br></br>
           <input
             type="text"
             value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={(user) => setUsername(user.target.value)}
           />
         </div><br></br>
         <div>
-          <label>Password:</label><br></br>
+          <label>Senha:</label><br></br>
           <input
             type="password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(senha) => setPassword(senha.target.value)}
           />
         </div><br></br>
-        <button type="submit">Login</button><br></br>
+        <button type="submit">Logar</button><br></br>
         <p style={{color: 'red'}}>{error}</p>
       </form>
     </div>
